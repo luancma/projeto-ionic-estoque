@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary" end>
+      <ion-button (click)="btnLogout()">
+        <ion-icon slot="icon-only" name="md-exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Meu Estoque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let produto of produtos">
+    <ion-card>
+      <ion-item-sliding id="item100">
+        <ion-item href="#">
+          <ion-label>
+            <h2>{{produto.prduto}}</h2>
+            <p>{{produto.marca}}</p>
+            <p>R$: {{produto.valor}}</p>
+          </ion-label>
+          <ion-note slot="end">
+            <p>{{produto.qtd}}</p>
+          </ion-note>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)=btnDelete(produto.produtoKey)>
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+          <ion-item-option>
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card>
+  </ion-list>
+  
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentModal()" color="success">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

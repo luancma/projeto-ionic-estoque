@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary" start>
+      <ion-button (click)="btnClose()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cadastro de produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid style="width: 90%">
+    <ion-item>
+      <ion-label position="floating">Nome do produto</ion-label>
+      <ion-input [(ngModel)]="produtoDados.produtoNome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marca</ion-label>
+      <ion-input  [(ngModel)]="produtoDados.produtoMarca"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fornecedor</ion-label>
+      <ion-input  [(ngModel)]="produtoDados.produtoFornecedor"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input  [(ngModel)]="produtoDados.produtoValor" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantidade</ion-label>
+      <ion-input  [(ngModel)]="produtoDados.produtoQtd" type="number"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="tirarFoto()">
+      Click me
+    </ion-button>
+
+  
+  <ion-button expand="block" color="success" (click)="btnCadastrarProduto()">Cadastrar</ion-button>
+  <ion-button expand="block" color="danger" (click)="btnLimpar()">Limpar</ion-button>
+</ion-grid>
+
+</ion-content>

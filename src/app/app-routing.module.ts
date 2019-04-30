@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { LoggedGuard } from './logged.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard] },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule',  canActivate: [LoggedGuard]  },
+  { path: 'estoque', loadChildren: './estoque/estoque.module#EstoquePageModule', canActivate: [AuthGuard] },
+  { path: 'cadastrar-produto', loadChildren: './cadastrar-produto/cadastrar-produto.module#CadastrarProdutoPageModule' },
 ];
 
 @NgModule({
@@ -23,4 +17,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
