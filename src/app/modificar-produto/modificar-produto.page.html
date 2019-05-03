@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary" start>
+      <ion-button (click)="btnClose()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modificar produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid style="width: 90%">
+        <ion-item>
+          <ion-label position="floating">Nome do produto</ion-label>
+          <ion-input [(ngModel)]="produtoUpdate.produtoNome" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marca</ion-label>
+          <ion-input  [(ngModel)]="produtoUpdate.produtoMarca"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fornecedor</ion-label>
+          <ion-input  [(ngModel)]="produtoUpdate.produtoFornecedor"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Valor</ion-label>
+          <ion-input  [(ngModel)]="produtoUpdate.produtoValor" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Quantidade</ion-label>
+          <ion-input  [(ngModel)]="produtoUpdate.produtoQtd" type="number"></ion-input>
+        </ion-item>
+      
+      <ion-button expand="block" color="success" (click)=btnUpdate(produtoUpdate)>Cadastrar</ion-button>
+      <ion-button expand="block" color="danger" (click)="btnLimpar()">Limpar</ion-button>
+    </ion-grid>
+    
+</ion-content>

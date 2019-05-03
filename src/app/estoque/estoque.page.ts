@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { CadastrarProdutoPage } from '../cadastrar-produto/cadastrar-produto.page';
 import * as firebase from 'firebase'
 import { LoadingController } from '@ionic/angular';
+import { ModificarProdutoPage } from '../modificar-produto/modificar-produto.page';
 @Component({
   selector: 'app-estoque',
   templateUrl: './estoque.page.html',
@@ -27,6 +28,16 @@ export class EstoquePage implements OnInit {
       });
       return await modal.present();
     }
+
+    async editModal(key) {
+      const modal = await this.modalController.create({
+        component: ModificarProdutoPage,
+        componentProps: {
+          key: key
+        }
+      });
+      return await modal.present()
+    }
     
     async getProdutos(){
       const loading = await this.loadingController.create({
@@ -44,20 +55,16 @@ export class EstoquePage implements OnInit {
       })
     }
 
-    btnDelete(id){
-      var adaRef = firebase.database().ref(`produto/${id}`);
-      adaRef.remove()
-        .then(function() {
-          console.log("Remove succeeded.")
-        })
-        .catch(function(error) {
-          console.log("Remove failed: " + error.message)
-        });
-    }
-    
-    btnOpenModal(){
-      console.log('abrir modal');
-    }
+    // btnDelete(id){
+    //   var adaRef = firebase.database().ref(`produto/${id}`);
+    //   adaRef.remove()
+    //     .then(function() {
+    //       console.log("Remove succeeded.")
+    //     })
+    //     .catch(function(error) {
+    //       console.log("Remove failed: " + error.message)
+    //     });
+    // }
     
     btnLogout(){
       this.auth.logout();

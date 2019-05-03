@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import * as firebase from 'firebase';
 import { CadastrarProdutoPageModule } from './cadastrar-produto/cadastrar-produto.module';
+import { ModificarProdutoPageModule } from './modificar-produto/modificar-produto.module';
 
 const config = {
   apiKey: "AIzaSyBUG462z0nzt1dtYtyQHoVTI4Dtgo7044I",
@@ -28,7 +29,9 @@ firebase.initializeApp(config);
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    CadastrarProdutoPageModule 
+    // Modals
+    CadastrarProdutoPageModule ,
+    ModificarProdutoPageModule
   ],
   providers: [
     StatusBar,

@@ -24,10 +24,7 @@
           </ion-note>
         </ion-item>
         <ion-item-options side="end">
-          <ion-item-option color="danger" (click)=btnDelete(produto.produtoKey)>
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
-          </ion-item-option>
-          <ion-item-option>
+          <ion-item-option (click)=editModal(produto.produtoKey)>
             <ion-icon slot="icon-only" name="create"></ion-icon>
           </ion-item-option>
         </ion-item-options>
