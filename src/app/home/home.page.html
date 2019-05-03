@@ -10,8 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Filter Pizza" (ionChange)="buscarProduto($event)" [debounce]="250"></ion-searchbar>
-  <ion-list *ngFor="let produto of produtos">
+  <!-- <ion-list *ngFor="let produto of produtos">
     <ion-card>
       <ion-item>
         <ion-label>
@@ -24,7 +23,18 @@
         </ion-note>
       </ion-item>
     </ion-card>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-item>
+    <ion-label>Gerenciar estoque</ion-label>
+    <ion-button size="large"><ion-icon name="stats"></ion-icon></ion-button>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Registrar venda</ion-label>
+      <ion-button size="large"><ion-icon name="pricetag"></ion-icon></ion-button>
+    </ion-item>
+
   
   
 </ion-content>

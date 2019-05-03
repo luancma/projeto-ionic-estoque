@@ -12,12 +12,12 @@ import * as firebase from 'firebase';
 import { CadastrarProdutoPageModule } from './cadastrar-produto/cadastrar-produto.module';
 
 const config = {
-  apiKey: "AIzaSyDJAUBqZJgLhRBeHjUBnBVfhTY8aXc7VU4",
-  authDomain: "projeto-ingles-5262b.firebaseapp.com",
-  databaseURL: "https://projeto-ingles-5262b.firebaseio.com",
-  projectId: "projeto-ingles-5262b",
-  storageBucket: "projeto-ingles-5262b.appspot.com",
-  messagingSenderId: "283452846843"
+  apiKey: "AIzaSyBUG462z0nzt1dtYtyQHoVTI4Dtgo7044I",
+  authDomain: "projeto-estoque-986b6.firebaseapp.com",
+  databaseURL: "https://projeto-estoque-986b6.firebaseio.com",
+  projectId: "projeto-estoque-986b6",
+  storageBucket: "projeto-estoque-986b6.appspot.com",
+  messagingSenderId: "226612387870"
 };
 
 firebase.initializeApp(config);

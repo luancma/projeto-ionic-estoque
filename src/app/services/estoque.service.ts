@@ -12,7 +12,7 @@ export class EstoqueService {
     api.set({
       produtoKey: api.key,
       uid: produtoDados.uid,
-      prduto: produtoDados.produtoNome,
+      produto: produtoDados.produtoNome,
       marca: produtoDados.produtoMarca,
       valor: produtoDados.produtoValor,
       qtd: produtoDados.produtoQtd,
