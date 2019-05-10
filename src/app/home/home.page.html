@@ -10,31 +10,18 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-list *ngFor="let produto of produtos">
-    <ion-card>
-      <ion-item>
-        <ion-label>
-          <h2>{{produto.prduto}}</h2>
-          <p>{{produto.marca}}</p>
-          <p>R$: {{produto.valor}}</p>
-        </ion-label>
-        <ion-note slot="end">
-          <p>{{produto.qtd}}</p>
-        </ion-note>
-      </ion-item>
-    </ion-card>
-  </ion-list> -->
-
   <ion-item>
     <ion-label>Gerenciar estoque</ion-label>
-    <ion-button size="large"><ion-icon name="stats"></ion-icon></ion-button>
+    <ion-button size="large" (click)="btnEstoque()"><ion-icon name="stats"></ion-icon></ion-button>
   </ion-item>
-
+  
   <ion-item>
-      <ion-label>Registrar venda</ion-label>
-      <ion-button size="large"><ion-icon name="pricetag"></ion-icon></ion-button>
-    </ion-item>
-
+    <ion-label>Registrar venda</ion-label>
+    <ion-button size="large" (click)="btnVenda()"><ion-icon name="pricetag"></ion-icon></ion-button>
+  </ion-item>
   
-  
+  <ion-item>
+    <ion-label>Minhas vendas</ion-label>
+    <ion-button size="large" (click)="btnIrVendas()"><ion-icon name="clipboard"></ion-icon></ion-button>
+  </ion-item>
 </ion-content>

@@ -10,6 +10,9 @@ const routes: Routes = [
   { path: 'estoque', loadChildren: './estoque/estoque.module#EstoquePageModule', canActivate: [AuthGuard] },
   { path: 'cadastrar-produto', loadChildren: './cadastrar-produto/cadastrar-produto.module#CadastrarProdutoPageModule' },  { path: 'criar-usuario', loadChildren: './criar-usuario/criar-usuario.module#CriarUsuarioPageModule' },
   { path: 'modificar-produto', loadChildren: './modificar-produto/modificar-produto.module#ModificarProdutoPageModule' },
+  { path: 'venda', loadChildren: './venda/venda.module#VendaPageModule' },
+  { path: 'modal-vender-produto', loadChildren: './modal-vender-produto/modal-vender-produto.module#ModalVenderProdutoPageModule' },
+  { path: 'vendas-controle', loadChildren: './vendas-controle/vendas-controle.module#VendasControlePageModule' },
 
 ];
 

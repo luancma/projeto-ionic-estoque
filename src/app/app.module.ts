@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import * as firebase from 'firebase';
 import { CadastrarProdutoPageModule } from './cadastrar-produto/cadastrar-produto.module';
 import { ModificarProdutoPageModule } from './modificar-produto/modificar-produto.module';
+import { ModalVenderProdutoPageModule } from './modal-vender-produto/modal-vender-produto.module';
 
 const config = {
   apiKey: "AIzaSyBUG462z0nzt1dtYtyQHoVTI4Dtgo7044I",
@@ -31,7 +32,8 @@ firebase.initializeApp(config);
     AppRoutingModule,
     // Modals
     CadastrarProdutoPageModule ,
-    ModificarProdutoPageModule
+    ModificarProdutoPageModule,
+    ModalVenderProdutoPageModule
   ],
   providers: [
     StatusBar,

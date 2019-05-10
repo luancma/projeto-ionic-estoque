@@ -40,6 +40,14 @@ export class HomePage {
       })
     }
 
+    btnVenda(){
+      this.router.navigateByUrl('venda')
+    }
+
+    btnIrVendas(){
+      this.router.navigateByUrl('vendas-controle')
+    }
+
     btnLogout(){
       this.loginService.logout()
     }

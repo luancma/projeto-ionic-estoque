@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import * as firebase from 'firebase'
-import { timer } from 'rxjs';
 @Component({
   selector: 'app-modificar-produto',
   templateUrl: './modificar-produto.page.html',
@@ -29,7 +28,7 @@ export class ModificarProdutoPage implements OnInit {
     btnClose(){
       this.modal.dismiss();
     }
-
+    
     getProdutos(key){
       let api = firebase.database().ref(`/produto/${key}`)
       this.produto = []
@@ -48,6 +47,7 @@ export class ModificarProdutoPage implements OnInit {
         }
       });
     }
+    
     btnUpdate(array){
       console.log(array)
       firebase.database().ref('/produto/').child(array.produtoKey).set({
@@ -58,12 +58,20 @@ export class ModificarProdutoPage implements OnInit {
         valor:  array.produtoValor,
         qtd: array.produtoQtd,
         fornecedor: array.produtoFornecedor,
-        editor: firebase.auth().currentUser.uid   
       })
     }
     
-    ngOnInit() {
+    btnLimpar = () => {
+      this.produtoUpdate.produtoFornecedor = "",
+      this.produtoUpdate.produtoMarca = "",
+      this.produtoUpdate.produtoNome = "",
+      this.produtoUpdate.produtoKey = "",
+      this.produtoUpdate.produtoQtd = null,
+      this.produtoUpdate.produtoUid = "",
+      this.produtoUpdate.produtoValor = null
     }
+    
+    ngOnInit() { }
     
   }
   

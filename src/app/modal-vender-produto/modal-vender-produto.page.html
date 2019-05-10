@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary" start>
+      <ion-button (click)="btnClose()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{value.produto}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>Estoque: {{value.qtd}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Preço: {{value.valor}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantidade</ion-label>
+        <ion-input [(ngModel)]="valorInput" type="number" placeholder="Quantidade"></ion-input>
+      </ion-item>
+    </ion-list >
+    <ion-button expand="block" color="success" (click)="btnVender()">Enviar</ion-button>
+  </ion-card>
+  
+</ion-content>
+
